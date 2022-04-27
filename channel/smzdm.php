@@ -16,6 +16,7 @@ function smzdm(): array
 
     $cookie = getenv('COOKIE_SMZDM');
     if (! $cookie) {
+        printf("检测不到 smzdm Cookie\n");
         $resp['reason'] = 'cookie 不存在';
         return $resp;
     }

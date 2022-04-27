@@ -29,6 +29,7 @@ foreach ($list as $value) {
     }
 
     if ($resp !== '') {
+        printf("%s 正在签到...\n", $title);
         $check_in = new Notify($resp, $title);
         
         $check_in->pusher();
