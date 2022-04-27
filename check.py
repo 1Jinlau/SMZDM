@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-__author__ = 'Skiy Chan'
+__author__ = 'Jetsung Chan'
 
 import os
 from pkg.notifier.dingtalk import Dingtalk

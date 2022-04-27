@@ -1,6 +1,8 @@
 ## 自动签到
 使用 GitHub Actions 自动签到。
 
+**『此分支不再维护』**
+
 ### 支持签到平台
 - 什么值得买: https://smzdm.com
 - V2EX: https://v2ex.com
