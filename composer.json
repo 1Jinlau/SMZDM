@@ -1,0 +1,5 @@
+{
+    "require": {
+        "jetsung/pusher": "^1.0"
+    }
+}
