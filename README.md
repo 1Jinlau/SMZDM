@@ -5,16 +5,16 @@
 - 什么值得买: https://smzdm.com
 
 ### 1. 实现功能
-+ 通过**多平台**发送签到通知（推送）。参考项目 [Pusher](https://github.com/jetsung/pusher)。
-+ 由 `github actions` 每日 8 点、20点定时运行（不太准时）
++ 通过 *多个平台（可自行添加）*推送签到通知。参考项目 [Pusher](https://github.com/jetsung/pusher)。
++ 由 `GitHub Actions` 每日 8 点、20点定时运行（不太准时）
   > `0 0,12 * * *`    
   > （亲测过几次，这个时间感觉不太准，难道实例每次执行的时区不同？实际时间是 8:40 和 20:15 分左右）      
   > 因 GitHub Actions 为美西时间，+13 小时为中国时间（即设置的时候需要 -13 小时）。
 
 ### 2. 使用方法
-1. **[Fork](fork)** 此项目，欢迎点 `star`；
-2. 设置签到平台的 `cookie` 信息：    
-    2.1. 在 **[Secret](settings/secrets/actions)** 新增 `COOKIE_SMZDM`，从[什么值得买官网](https://www.smzdm.com/) 提取的 cookie 信息。   
+1. **[Fork](./fork)** 此项目，欢迎点 `Star`；
+2. 设置签到平台的 `Cookie` 信息：    
+    2.1. 在 **[Secret](./settings/secrets/actions)** 新增 `COOKIE_SMZDM`，从[什么值得买](https://www.smzdm.com/) 官网提取的 Cookie 信息。   
 3. `Fork` 后必须修改一下文件，才能执行定时任务。可修改 `README.md`。
 
 > **[相关变量](.github/workflows/check-in.yml)：**   
@@ -24,7 +24,7 @@
 >> DINGTALK_TOKEN   
 
 ### 3. 通知推送（可选）
-1. 目前只支持 PushDeer 和 Dingtalk 推送，其它平台可自行参考 [notify.php](notify.php) 文件自行添加。
+1. 目前只支持 PushDeer 和 Dingtalk 推送，其它平台可参考 [notify.php](notify.php) 文件自行添加。
 > 需要在 `.github/workflows/check-in.yml` 添加相应的 `Pusher Token` 环境变量。
 
 ### 4. 其它
