@@ -59,7 +59,6 @@ class Notify
         printf("%s 钉钉群通知推送[%s】\n", $this->title, $channel->getStatus() ? '成功' : '失败');
         return $channel->getStatus();
     }
-}
 
     public function Pushplus(): bool
     {
