@@ -2,8 +2,10 @@
 
 use Pusher\Channel\Dingtalk;
 use Pusher\Channel\PushDeer;
+use Pusher\Channel\Pushplustalk;
 use Pusher\Message\DingtalkMessage;
 use Pusher\Message\PushDeerMessage;
+use Pusher\Message\PushplusMessage;
 
 class Notify
 {
