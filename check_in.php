@@ -34,5 +34,6 @@ foreach ($list as $value) {
         
         $check_in->pusher();
         $check_in->dingtalk();
+        $check_in->Pushplus();
     }
 }
