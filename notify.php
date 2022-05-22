@@ -5,7 +5,7 @@ use Pusher\Channel\PushDeer;
 use Pusher\Channel\Pushplustalk;
 use Pusher\Message\DingtalkMessage;
 use Pusher\Message\PushDeerMessage;
-use Pusher\Message\PushplusMessage;
+use Pusher\Message\PUSHPLUSMessage;
 
 class Notify
 {
@@ -60,27 +60,25 @@ class Notify
         return $channel->getStatus();
     }
 
-    public function Pushplus(): bool
+    public function PUSHPLUS(): bool
     {
-        $token = getenv('PushplusToken');
+        $token = getenv('PUSHPLUSToken');
         if (! $token) {
             return false;
         }
 
-        $channel = new Pushplus();
+        $channel = new PUSHPLUS();
         $channel->setToken($token);
 
         if ($secret) {
             $channel->setSecret($secret);
         }
 
-        printf("%s 钉钉群通知进行中...\n", $this->title);
-        $message = new PushplusMessage(PushplusMessage::TYPE_TEXT, $this->message, $this->title);
-        $message->setIsAll(true);
+        printf("%s PushDeer 通知进行中...\n", $this->title);
+        $message = new PUSHPLUSMessage(PUSHPLUSMessage::TYPE_TEXT, $this->message, $this->title);
         $channel->request($message);
 
-        printf("%s 钉钉群通知推送[%s】\n", $this->title, $channel->getStatus() ? '成功' : '失败');
+        printf("%s PUSHPLUS 通知推送[%s】\n", $this->title, $channel->getStatus() ? '成功' : '失败');
         return $channel->getStatus();
     }
-}
 
