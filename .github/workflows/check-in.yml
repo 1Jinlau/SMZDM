@@ -43,7 +43,7 @@ jobs:
       - name: Working
         env:
           COOKIE_SMZDM: ${{ secrets.COOKIE_SMZDM }}
-          PushplusToken: "${{secrets.Pushplus_TOKEN}}"
+          PushplusToken: "${{secrets.PUSHPLUS_TOKEN}}"
           PushDeerToken: "${{secrets.PUSHDEER_TOKEN}}"
           DingtalkSecret: "${{secrets.DINGTALK_SECRET}}"
           DingtalkToken: "${{secrets.DINGTALK_TOKEN}}"
