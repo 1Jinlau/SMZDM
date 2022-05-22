@@ -59,3 +59,27 @@ class Notify
     }
 }
 
+    public function Pushplus(): bool
+    {
+        $token = getenv('PushplusToken');
+        if (! $token) {
+            return false;
+        }
+
+        $channel = new Pushplus();
+        $channel->setToken($token);
+
+        if ($secret) {
+            $channel->setSecret($secret);
+        }
+
+        printf("%s 钉钉群通知进行中...\n", $this->title);
+        $message = new PushplusMessage(PushplusMessage::TYPE_TEXT, $this->message, $this->title);
+        $message->setIsAll(true);
+        $channel->request($message);
+
+        printf("%s 钉钉群通知推送[%s】\n", $this->title, $channel->getStatus() ? '成功' : '失败');
+        return $channel->getStatus();
+    }
+}
+
